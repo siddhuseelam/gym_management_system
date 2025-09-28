@@ -1,11 +1,19 @@
 :root {
+  --color-sand-light: #f5e6d3;
+  --color-sand: #e6d5c3;
+  --color-sand-dark: #d4c4b0;
+  --color-terracotta: #c66b3d;
+  --color-brown: #8b4513;
+  --color-text-primary: #594a3c;
+  --color-text-secondary: #7c6c62;
+
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color-scheme: light;
+  color: var(--color-text-primary);
+  background-color: var(--color-sand-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,11 +23,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: var(--color-terracotta);
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--color-brown);
 }
 
 body {
@@ -28,41 +36,49 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: var(--color-sand-light);
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: var(--color-brown);
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--color-sand-dark);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color-sand);
+  color: var(--color-text-primary);
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: all 0.25s;
 }
 
+button:hover {
+  border-color: var(--color-terracotta);
+  background-color: var(--color-sand-light);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+
+/* Remove dark mode preferences since we're using a consistent light theme */
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: var(--color-text-primary);
+    background-color: var(--color-sand-light);
   }
   a:hover {
-    color: #747bff;
+    color: var(--color-brown);
   }
   button {
-    background-color: #f9f9f9;
+    background-color: var(--color-sand);
   }
 }

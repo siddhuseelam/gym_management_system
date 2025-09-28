@@ -17,37 +17,28 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1 className="main-title">Gym Management System</h1>
+        <div className="people-container">
+          <h2 className="section-title">Members Directory</h2>
+          <div className="people-grid">
+            {people.map((person, idx) => (
+              <div key={idx} className="person-card">
+                <h3 className="person-name">{person.name}</h3>
+                <div className="person-details">
+                  <p className="detail-item">
+                    <span className="label">Phone:</span>
+                    <span className="value">{person.phone}</span>
+                  </p>
+                  <p className="detail-item">
+                    <span className="label">Address:</span>
+                    <span className="value">{person.address}</span>
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <div>
-        <h2>People List</h2>
-        <ul>
-          {people.map((person, idx) => (
-            <li key={idx}>
-              <strong>{person.name}</strong><br />
-              Phone: {person.phone}<br />
-              Address: {person.address}
-            </li>
-          ))}
-        </ul>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
