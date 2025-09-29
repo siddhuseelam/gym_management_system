@@ -9,6 +9,11 @@ export default defineConfig({
         target: 'http://127.0.0.1:5000',
         changeOrigin: true,
         secure: false
+      },
+      '/register': {
+        target: 'http://127.0.0.1:5000',
+        changeOrigin: true,
+        secure: false
       }
       // Add more endpoints if needed
     }
